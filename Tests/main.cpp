@@ -30,20 +30,19 @@ void testForward(T&& v) {}
 int 
 main() 
 {
-    // const & 右边可以是lvalue或者rvalue
-    // & 右边只能是lvalue
-    // && 右边只能是rvalue
+    // const & 锟揭边匡拷锟斤拷锟斤拷lvalue锟斤拷锟斤拷rvalue
+    // & 锟揭憋拷只锟斤拷锟斤拷lvalue
+    // && 锟揭憋拷只锟斤拷锟斤拷rvalue
     A &&a = funcTest();
     int c;
     int && b = 10;
 
-    //万能引用，如果一个变量或者参数被声明为T&&，其中T是被推导的类型，那这个变量或者参数就是一个universal reference
+    //锟斤拷锟斤拷锟斤拷锟矫ｏ拷锟斤拷锟揭伙拷锟斤拷锟斤拷锟斤拷锟斤拷卟锟斤拷锟斤拷锟斤拷锟斤拷锟轿猅&&锟斤拷锟斤拷锟斤拷T锟角憋拷锟狡碉拷锟斤拷锟斤拷锟酵ｏ拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷卟锟斤拷锟斤拷锟斤拷锟揭伙拷锟絬niversal reference
     testForward(1); // case 1
     int x = 1;
     testForward(x); // case 2
     const int& rx = x;
     testForward(rx); // case 2
-
 
     return 0;
 }
