@@ -1,27 +1,28 @@
 ﻿{
-    "version": 3,
-    "configurePresets": [
-        {
-            "name": "Base",
-            "hidden": true,
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/build/${presetName}"
-        },
-        {
-            "name": "Release",
-            "inherits":[ "Base" ],
-            "cacheVariables":{
-                "CMAKE BUILD TYPE": "Release",
-                "TARGET_SOURCE": "Desktop"
-            }
-        },
-        {
-            "name": "Debug",
-            "inherits":[ "Base" ],
-            "cacheVariables":{
-                "CMAKE BUILD TYPE": "Debug",
-                "TARGET_SOURCE": "Desktop"
-            }
-        }
-    ]
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "Base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/Build/${presetName}",
+      "installDir": "${sourceDir}/Install/${presetName}"
+    },
+    {
+      "name": "Release",
+      "displayName": "Release",
+      "inherits": "Base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "inherits": "Base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ]
 }
