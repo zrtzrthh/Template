@@ -3,5 +3,5 @@
 void
 print()
 {
-	std::cout << "CMAKE!!!" << std::endl;
+  std::cout << "CMAKE!!!" << std::endl;
 }
