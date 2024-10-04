@@ -1,5 +1,5 @@
-file(GLOB_RECURSE MATH_LIB_SRC *.cpp
-							        Calculus/*.cpp)
+file(GLOB_RECURSE MATH_LIB_SRC          *.cpp
+							                 Calculus/*.cpp)
 
 add_library(Mathematics STATIC ${MATH_LIB_SRC})
 
