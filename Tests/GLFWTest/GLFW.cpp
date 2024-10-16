@@ -1,3 +1,6 @@
+
+#include <iostream>
+
 #include <GLFW/glfw3.h>
 #include <GL/gl.h>
 
@@ -25,6 +28,7 @@ void render()
 
 int main(void)
 {
+  std::cout << "OpenGL!!!" << std::endl;
   GLFWwindow *window;
 
   /* Initialize the library */
