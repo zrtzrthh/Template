@@ -8,8 +8,10 @@ project ("Template" LANGUAGES CXX CUDA)
 find_package(OpenGL REQUIRED)
 
 add_subdirectory(Source/Mathematics)
+add_subdirectory(Source/Mathematics/LinearAlgebra)
 add_subdirectory(Cuda/CudaTest)
 add_subdirectory(Tests/GLFWTest) 
+add_subdirectory(Tests/UniversalTest) 
 
 
 
