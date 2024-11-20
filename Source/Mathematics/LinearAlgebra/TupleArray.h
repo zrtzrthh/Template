@@ -25,7 +25,7 @@ public:
     return operator[](index);
   }
   constexpr const Type &
-    at(std::size_t index) const
+  at(std::size_t index) const
   {
     assert(0 <= index && index < LENGTH);
     return operator[](index);
@@ -33,7 +33,7 @@ public:
 };
 
 template<typename Type>
-class TupleArray<Type, 0>
+class TupleArray<Type, 0> //模板特化
 {
   template<typename, std::size_t>
   friend class TupleArray;
@@ -50,9 +50,10 @@ class TupleArray<Type, 0>
 
     constexpr
     BaseTypeTuple(Type element, Types ...elements):
-      BaseTypeTuple<Types...>{ elements... },
+      BaseTypeTuple<Types...>{ elements... }, //基类的构造函数处理elements
       element                { element }
     {}
+
     constexpr Type &
     operator[](std::size_t index)
     {
@@ -79,6 +80,7 @@ class TupleArray<Type, 0>
     BaseTypeTuple(Type element):
       element{ element }
     {};
+
     constexpr Type &
     operator[](std::size_t index)
     {
